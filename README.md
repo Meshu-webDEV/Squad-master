@@ -1,5 +1,5 @@
 # Squad-master
-Squad master is a web application I developed for my graduation project, it aims to help and improve the amateur football player condition in the kingdom of Saudi Arabia.
+Squad master is an ASP.NET and C# web application I developed for my graduation project, it aims to help and improve the amateur football player condition in the kingdom of Saudi Arabia.
 
 # Short description
 Squad master is aimed to help and improve the amateur
