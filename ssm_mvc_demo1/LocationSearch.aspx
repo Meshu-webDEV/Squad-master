@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnNjMT1Fgq3lntEYEq_8yNQuqFL1BNMqk&libraries=places&sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=KEY_HERE"></script>
     <script src="LocationSearch.js" type="text/javascript"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
