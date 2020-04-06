@@ -1,0 +1,31 @@
+﻿<div class="d-flex justify-content-center">
+<div class="row w-100 justify-items-center align-items-center">
+<div class="col-5 p-1">Match name</div>
+<div class="col-2 text-center p-1">20/20</div>
+<div class="col-4 text-center p-0">
+<div class="row-1 px-2">7:00:00 AM</div>
+<div class="row-1 px-2">2019/12/12</div>
+</div>
+<div class="col-1 d-flex justify-content-center p-0">
+<button id="matchId" type="button" class="unbutton" onclick="getIframe(this)" data-toggle="modal" data-target="#Modal">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+<path d="M16 14 L16 23 M16 8 L16 10" />
+<circle cx="16" cy="16" r="14" />
+</svg>
+</button>
+</div>
+</div>
+</div>
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content" style="height: 78%;">
+<div class="modal-body">
+<iframe src="https://localhost:44317/upMatchIframe.aspx?match_id=20" frameborder="0" class="w-100 h-100"></iframe>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+<hr />

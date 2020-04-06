@@ -1,0 +1,32 @@
+<div class="field-block">
+<div class="field-container">
+<div class="field-content">
+<div class="field-content-info">
+<div class="info-name">court_name</div>
+<div class="info-bottom">
+<div class="info-limit">court_limit</div>
+<div class="info-city">court_city</div>
+<div class="map-view">
+<button type="button" class="btn view-button" data-toggle="modal" data-target="#Modal">
+</button>
+</div>
+</div>
+</div>
+<div class="field-content-select">
+<button id="field_id" class="btn btn-success" onclick="Selected(this)">Select</button>
+</div>
+</div>
+</div>
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-body">modal_body</div>
+<div class="modal-footer">
+<a target="_blank" href="map_dir" class="btn btn-info"> Directions </a> 
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span><svg id="i-user" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z"></path> </svg></span>

@@ -1,0 +1,837 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+html {
+    margin-bottom: 20px;
+}
+
+body {
+    padding-bottom: 20px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-style: italic;
+    opacity: 0.4;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    display: grid;
+    grid-gap: 12px;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.btn:hover {
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+.top-navbar {
+    max-height: 71px;
+}
+
+#top-navbar {
+    margin-bottom: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.bell {
+    right: 100px;
+    position: absolute;
+}
+
+.disabled-bell {
+    font-size: 20px;
+    /* color: #eac2c247; */
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.notif-modal {
+    height: auto !important;
+    width: 95% !important;
+    margin: auto !important;
+    margin-top: 2rem !important;
+}
+
+.mymatches-modal {
+    margin: auto !important;
+    margin-top: 50px !important;
+    width: 100%;
+    width: 94% !important;
+}
+
+.mym-loading {
+    position: absolute;
+    top: 31%;
+    margin: 0px;
+    left: 40%;
+    width: 80px !important;
+    height: 80px !important;
+}
+
+.mym-name {
+    min-width: 100px;
+    max-width: 100px;
+    overflow-x: scroll;
+}
+
+.notif-row {
+    width: 100%;
+    display: grid !important;
+    grid-template-rows: auto;
+    grid-template-columns: auto 0.5fr 0.3fr;
+    margin: 0px !important;
+    justify-content: stretch;
+    align-items: center;
+    margin: 0;
+}
+
+.opacity-5 {
+    opacity: 0.5;
+}
+
+.notif-empty {
+    opacity: 0.4;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-content {
+    display: grid;
+}
+
+
+.My-matches {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 0.4fr 0.3fr 0.2fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-content-mymatches {
+    display: flex;
+}
+
+#mobile-logo {
+    width: 55px;
+    height: 55px;
+}
+
+#navbarResponsive {
+    display: block;
+}
+
+#navbar-sidepanel {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    left: 0px;
+    min-height: 100vh;
+    padding-left: 20px !important;
+    padding: 10px;
+}
+
+#sidepanel-close-button {
+    display: grid;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#i-close {
+    justify-self: end;
+}
+
+#slides {
+}
+
+#slider-item1 {
+    background: red;
+}
+
+#slider-item2 {
+    background: blue;
+}
+
+#slider-item3 {
+    background: yellow;
+}
+
+.btn-createMatch {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.unbutton {
+    background: none;
+    border: none;
+}
+
+.nav-link {
+    color: #1b1e21 !important;
+}
+
+.disabled-link {
+    text-decoration: line-through !important;
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+.disabled-button {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+.upcoming-info {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='19' height='19' fill='none' stroke='currentcolor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='M16 14 L16 23 M16 8 L16 10' /%3E%3Ccircle cx='16' cy='16' r='14' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+}
+
+.createMatch-disabled {
+    opacity: 0.2;
+}
+
+.card-body-createMatch {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.card-body-UpcomingMatches {
+    max-height: 350px;
+    padding: 0px !important;
+    overflow: scroll;
+}
+
+#h5-upcoming {
+    margin-top: 12px;
+}
+
+#bottom-navbar {
+    min-height: 50px;
+    margin-bottom: -2px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    justify-items: center;
+    box-shadow: 0px -2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+}
+
+.top-navbar-icon {
+    width: 35px;
+    justify-self: end;
+}
+
+.bottom-nav-icons {
+    width: 35px;
+}
+
+#bottom-nav-icons-create {
+    width: 45px;
+}
+
+#logoutButton {
+    margin-top: 20px;
+}
+
+.table {
+    border: none !important;
+}
+
+#table tbody {
+    border: none !important;
+}
+
+#table td {
+    border: none !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+}
+
+#table tr {
+    border: none !important;
+}
+
+#table th {
+    border: none !important;
+}
+
+/*Porfile page*/
+
+.image-object-fit-150 {
+    border-radius: 182px;
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
+}
+
+.gear {
+    position: absolute;
+    left: 318px;
+    top: 10px;
+    opacity: 0.5;
+}
+
+.username {
+    background-color: #17a2b8;
+    color: white;
+    text-shadow: 3px 2px 6px #0000006b;
+}
+
+#shadow {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    box-shadow: 1px 1px 13px 0px #0000003d;
+    border-radius: 150px;
+}
+
+.box {
+    border-radius: 5px;
+    border-top: 25px solid white;
+    display: flex;
+    min-width: 9rem;
+    min-height: 5rem;
+    box-shadow: 0 0 8px 0px #00000070;
+    background-color: #17a2b8;
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.info-title {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    font-size: 0.8rem;
+    color: black;
+}
+
+.bio {
+    border: 0.01rem solid #0000001a;
+    border-radius: 6px;
+    min-height: 7rem;
+    min-width: 100% !important;
+    box-shadow: 2px 5px 10px #00000014;
+}
+
+textarea {
+    resize: none;
+}
+
+.bio:disabled {
+    background: none;
+}
+
+.bio-edit {
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+}
+
+/*Create match form page*/
+
+.mb-60 {
+    margin-bottom: 180px;
+}
+
+#datetime {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 1fr 1fr;
+    grid-column-gap: 3px;
+}
+
+.match-date-list {
+    padding: 3px;
+}
+
+.black-color-list {
+    color: black;
+    font-size: inherit;
+}
+
+.input-group {
+    justify-content: center;
+}
+
+.hr {
+    margin-bottom: 10px;
+}
+
+#MainContent_fieldCard {
+    padding: 0px 8px 8px 8px;
+    overflow: scroll;
+    max-height: 400px;
+    min-height: 150px;
+}
+
+.scrollable {
+    padding: 12px;
+    overflow: scroll;
+    max-height: 300px;
+    min-height: 150px;
+}
+
+.field-card-grid {
+    display: grid;
+}
+
+.field-box {
+    border: none;
+    border-bottom: 1px black solid;
+}
+
+.div-title {
+    margin-bottom: 8px;
+}
+
+.link-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.blocker {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.link-wrap iframe {
+    z-index: 2;
+}
+
+.map-button-width {
+    width: 96px;
+    padding: 6px 12px;
+}
+
+.field-container {
+    margin-top: -8px;
+    display: grid;
+    min-height: 140px;
+}
+
+    .field-container div {
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        grid-gap: 4px;
+    }
+
+.field-content {
+    grid-template-columns: .7fr .3fr;
+}
+
+.field-content-map {
+}
+
+.map-view {
+    align-items: center;
+}
+
+.map-view-button {
+}
+
+.view-button {
+    background-image: url(/Content/images/map.jpg);
+    background-repeat: no-repeat;
+    width: 29px;
+    height: 29px;
+    background-size: 100% 100%;
+}
+
+.info-name {
+    justify-self: start;
+    align-items: end;
+    font-size: 1.1rem;
+}
+
+.info-bottom {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.field-content-select {
+    align-items: center;
+}
+
+.map-dialoge-container {
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.map-dialoge-content {
+    height: 35rem;
+}
+
+.map-dialoge-body {
+    height: 30rem;
+}
+
+.map-button-width {
+    width: 96px;
+    padding: 6px 12px;
+}
+
+
+
+.info-limit {
+    display: block !important;
+}
+
+.modal-dialog {
+    height: 100%;
+}
+
+.modal-content {
+    height: 70%;
+}
+/* MATCH ROOM PAGE */
+/* mr = Match Room*/
+
+.ddl-profile {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: black;
+}
+
+.mr-imgs {
+    border: none;
+    object-fit: cover;
+    width: 90% !important;
+    height: 220px;
+}
+
+.min-height {
+    min-height: 23.79px;
+}
+
+.current-user-a {
+    border-right: 13px #28a745 solid;
+    border-radius: 7px;
+    padding: 4px;
+    background: #c9c5ca14;
+    box-shadow: 0px 0px 20px 1px #dcdcdcb8;
+}
+
+.current-user-b {
+    border-left: 13px #28a745 solid;
+    border-radius: 7px;
+    padding: 4px;
+    background: #c9c5ca14;
+    box-shadow: 0px 0px 20px 1px #dcdcdcb8;
+}
+
+.mr-opt {
+    position: absolute;
+    right: 34px;
+    top: 75px;
+}
+
+.mr-plus {
+    position: absolute;
+    right: 31px;
+    top: 133px;
+}
+
+.toast {
+    backdrop-filter: none !important;
+    z-index: 100000;
+    position: absolute;
+    display: block;
+    width: 60%;
+    right: 34px;
+    top: 38px;
+}
+
+.subtitle-pvt {
+    color: darkmagenta;
+    opacity: 1;
+}
+
+.subtitle-pub {
+    color: forestgreen;
+    opacity: 1;
+}
+
+/* AddFootballFieldPage */
+@media (min-width: 320px) {
+    #map {
+        width: 16rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 375px) {
+    #map {
+        width: 18rem;
+        height: 14rem;
+    }
+}
+
+@media (min-width: 576px) {
+    #map {
+        width: 22rem;
+        height: 18rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    #map {
+        width: 26rem;
+        height: 22rem;
+    }
+}
+
+
+@media (min-width: 992px) {
+    #map {
+        width: 30rem;
+        height: 26rem;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    #map {
+        width: 32rem;
+        height: 28rem;
+    }
+}
+
+/*UPLOAD THINGS*/
+
+.custom-file-upload {
+    align-items: center;
+    display: grid;
+    margin: 0px;
+    padding-left: 8px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.custom-file-cancel {
+    transition: ease;
+    align-self: center;
+    display: grid;
+    margin: 0px;
+    padding-left: 8px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.placeholder-looklike {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #878f95;
+}
+
+.upload-icon {
+    margin-left: 17px;
+}
+
+.cursor {
+    cursor: not-allowed;
+    background: white !important;
+}
+
+.field-image {
+    height: 50px;
+}
+
+.svg-btn {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="500" height="100" viewBox="0 0 4442 720"><path d="M36,297.64c317.62,0,428,134.58,696,136.74S1160,364,1436,389s431.72-102.09,618-91.36,505.93,73.37,715,72.29,339,72,674,64.45,712.27,157.83,920,174l46,111.14H36Z" ></path></svg>');
+}
+
+.height60 {
+    height: 75px;
+    width: auto !important;
+}
+
+.field-image-preview {
+    border: none;
+    object-fit: cover;
+    width: 65px;
+    height: 65px;
+}
+
+
+.court-imgs {
+    border: none;
+    object-fit: cover;
+    width: 90% !important;
+    height: 220px;
+}
+
+/* Court page */
+
+#court-slides-control {
+    width: 100%;
+}
+
+#court-prev {
+    margin-right: 20px;
+}
+
+#court-next {
+    margin-left: 20px;
+}
+
+@media (min-width: 320px) {
+    #court-map-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 576px) {
+    #court-map-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    #court-map-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/*FootballFields page*/
+
+.add-field-disabled {
+}
+
+
+/* upcoming match stuff page*/
+#carousel-indicators {
+    background: black;
+}
+
+.minus-margin {
+    margin-bottom: -68px;
+}
+
+.upmatch-block {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+/*search page*/
+.radioButtonList label {
+    display: inline;
+}
+
+.result {
+    border-radius: 6px;
+    box-shadow: 0 0 6px 0px #0000002e;
+    border-left: 21px #17a2b8 solid;
+}
+
+.remove-href {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/*FriendList page*/
+.friend {
+    border-radius: 6px;
+    box-shadow: 0 0 6px 0px #0000002e;
+    border-left: 21px #17a2b8 solid;
+}
+
+.fl-empty {
+    text-align: center;
+    opacity: 0.6;
+}
+
+.sixteenpx {
+    font-size: 16px;
+}
+/*LOADING*/
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .lds-ring div {
+        box-sizing: border-box;
+        display: block;
+        position: absolute;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border: 8px solid #fff;
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #fff transparent transparent transparent;
+    }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

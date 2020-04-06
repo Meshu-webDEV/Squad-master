@@ -1,0 +1,29 @@
+0: Button tag top open modal
+1: Opening div of 1 class=modal fade id=myModal role=dialog
+2: Opening div of 2 class=modal-dialog
+3: Opening div of 3 class=modal-content
+4: Opening div of 4 class=modal-body
+5: Closing div of 4
+6: Opening div of 6 class=modal-footer
+7: Button tag for closing modal
+8: Closing div of 6
+9: Closing div of 3
+10:Closing div of 2
+11: Closing div of 1
+
+Block structure:
+0 
+1
+2
+3
+4
+MAP IFRAME GOES HERE
+5
+6
+DIRECTION BUTTON GOES HERE
+7
+8
+9
+10
+11
+button to open Modal

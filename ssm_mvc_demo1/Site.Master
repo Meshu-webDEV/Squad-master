@@ -1,0 +1,235 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ssm_mvc_demo1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSM APP</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+<link href="Content/Site.css" rel="stylesheet" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Content/jquery.timepicker.min.css" rel="stylesheet" />
+    <link href="Content/jquery.timepicker.css" rel="stylesheet" />
+    <script src="Scripts/jquery.timepicker.js"></script>
+    <script src="Scripts/jquery.timepicker.min.js"></script>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <%--        Navagation bar      --%>
+        <asp:Button ID="hiddenProfile" ClientIDMode="Static" Text="" Style="display: none;" OnClick="Profile_Click" runat="server" />
+
+        <nav id="top-navbar" class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+
+            <div class="container-fluid top-navbar">
+
+                <button id="navbar-toggler" class="navbar-toggler" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <button type="button" id="bell" runat="server" style="font-size: 20px;" class="unbutton bell" data-toggle="modal" data-target="#myModal">🔔 </button>
+
+                <a href="/default.aspx">
+                    <img id="mobile-logo" src="/images/logo.png" alt="Alternate Text" /></a>
+
+            </div>
+
+            <%--        Sidepanel      --%>
+            <div id="navbarResponsive" class="bg-light">
+                <ul class="navbar-nav ml-auto bg-light" id="navbar-sidepanel">
+                    <li id="sidepanel-close-button">
+                        <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <path d="M2 30 L30 2 M30 30 L2 2" />
+                        </svg>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Default.aspx" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/FootballFields.aspx" class="nav-link">Fields</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/Search.aspx" class="nav-link">Search</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="frndLink" runat="server" href="" class="nav-link">Friends 👬🏼</a>
+                    </li>
+
+                    <%--                    <li class="nav-item">
+                        <a href="/Fields.aspx" class="nav-link">Fields</a>
+                    </li>--%>
+
+                    <li class="nav-item">
+                        <asp:Button Text="Log out" ID="logoutButton" OnClick="logout_Click" runat="server" class="btn btn-danger" Visible="false" />
+                    </li>
+                    <li class="nav-item">
+                        <asp:Button Text="Log in" ID="loginButton" OnClick="login_Click" runat="server" class="btn btn-primary" />
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <%--        MyMatches.aspx--%>
+        <%-- notifications modal --%>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog notif-modal">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <%--svg close should go in btn below v--%>
+
+                        <h4 class="modal-title">Notifications</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                <path d="M2 30 L30 2 M30 30 L2 2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="notifId" runat="server" src="" frameborder="0" width="100%"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <%-- /notifications modal --%>
+
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <%--        Bottom bar      --%>
+
+        <%-- mymatches modal --%>
+        <div id="myMatchesModal" class="modal fade" role="dialog">
+            <div class="modal-dialog mymatches-modal">
+
+                <!-- Modal content-->
+                <div class="modal-content modal-content-mymatches">
+                    <div class="modal-header">
+                        <%--svg close should go in btn below v--%>
+
+                        <h4 class="modal-title">My matches</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                <path d="M2 30 L30 2 M30 30 L2 2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <%-- <iframe id="myiFrame" data-src="http://my.url" src="about:blank"> </iframe> --%>
+                        <div id="loading" class="mym-loading spinner-border text-dark" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <iframe id="mymId" runat="server" data-src="" frameborder="0" src="about:blank" width="100%" height="100%"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <%-- /mymatches modal --%>
+
+
+        <nav style="padding: 0px !important;" id="bottom-navbar" class="navbar navbar-expand-md navbar-dark bg-light fixed-bottom">
+
+            <div class="tab">
+                <button type="button" id="ball" runat="server" style="font-size: 24px;" class="nav-link unbutton" data-toggle="modal" data-target="#myMatchesModal">⚽</button>
+            </div>
+            <div class="tab">
+                <a href="CreateMatchForm.aspx" class="nav-link">
+                    <img id="bottom-nav-icons-create" class="bottom-nav-icons" src="/images/create.png" alt="" /></a>
+            </div>
+            <div class="tab">
+
+                <img class="bottom-nav-icons" src="/images/profile.png" alt="" id="profile" runat="server" onclick="ProfLink(); return true;" />
+            </div>
+
+
+        </nav>
+
+        <script>
+
+            function ProfLink() {
+
+                $("#hiddenProfile").click()
+
+            }
+
+            $("#ball").click(function () {
+
+                $("#loading").fadeIn("fast");
+
+            });
+
+            $('#mymId').on('load', function () {
+                $("#loading").fadeOut("fast");
+            });
+
+            $(document).ready(function () {
+                $("#navbar-toggler").click(function () {
+                    $("#navbar-sidepanel").toggle("slide");
+                });
+
+                $("#navbar-sidepanel").mouseleave(function () {
+                    $("#navbar-sidepanel").hide();
+                });
+
+                $("#sidepanel-close-button").click(function () {
+                    $("#navbar-sidepanel").toggle("slide");
+                });
+
+                $("#ball").click(function (e) {
+
+                    var iframe = $("#mymId");
+                    iframe.attr("src", iframe.data("src"));
+
+                });
+
+            });
+
+        </script>
+
+    </form>
+</body>
+
+
+
+</html>
