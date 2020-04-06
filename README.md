@@ -1,7 +1,7 @@
 # Squad-master
 Squad master is an ASP.NET and C# web application I developed for my graduation project, it aims to help and improve the amateur football player condition in the kingdom of Saudi Arabia.
 
-*This repo is just a refrence for my linkedin*
+* *This repo is just a refrence for my linkedin*
 
 # Short description
 Squad master is aimed to help and improve the amateur
